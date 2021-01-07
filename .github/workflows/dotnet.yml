@@ -6,8 +6,8 @@ on:
     branches: [ main ]
 
 jobs:
-  build_publish:
-    name: deploy to production
+  build:
+    name:  Production Build
     runs-on: windows-latest
     
     steps:
@@ -19,19 +19,14 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
-      
-    - name: Publish  
-      uses: brandedoutcast/publish-nuget@v2.5.2
-      with:   
-        PROJECT_FILE_PATH: ../../CICDPracticalRepo/CICDPracticalRepo.csproj  
-        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
-        VERSION_REGEX: <Version>(.*)<\/Version>
-        TAG_COMMIT: true
-        TAG_FORMAT: v*
-        NUGET_SOURCE: https://api.nuget.org
-        INCLUDE_SYMBOLS: false
+      run: dotnet build --configuration Release --no-restore /p:DebugType=None
+    
+    #- name: Test
+    #  run: dotnet test --no-build --verbosity normal
+        
+    - uses: actions/upload-artifact@v2
+      with:
+        name: CICDPublish
+        run: dotnet publish CICDPracticalRepo.csproj -o ../PublishPro/CICDPracticalRepo/ -r win-x64 --self-contained false /p:DebugType=None
       
 
