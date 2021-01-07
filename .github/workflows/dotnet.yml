@@ -1,5 +1,4 @@
-name: .NET
-
+name: Production Build
 on:
   push:
     branches: [ main ]
