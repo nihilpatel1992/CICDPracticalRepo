@@ -26,7 +26,12 @@ jobs:
     - name: Publish  
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:   
-        PROJECT_FILE_PATH: CICDPracticalRepo/CICDPracticalRepo/CICDPracticalRepo.csproj  
+        PROJECT_FILE_PATH: ../../CICDPracticalRepo/CICDPracticalRepo.csproj  
         NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+        VERSION_REGEX: <Version>(.*)<\/Version>
+        TAG_COMMIT: true
+        TAG_FORMAT: v*
+        NUGET_SOURCE: https://api.nuget.org
+        INCLUDE_SYMBOLS: false
       
 
