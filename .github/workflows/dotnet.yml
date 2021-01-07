@@ -21,13 +21,15 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore /p:DebugType=None
     
+    - name: Publish
+      run: dotnet publish CICDPracticalRepo.csproj -o ../PublishPro/CICDPracticalRepo/ -r win-x64 --self-contained false /p:DebugType=None
+    
     #- name: Test
     #  run: dotnet test --no-build --verbosity normal
         
     - name: Upload Application Publish Artifact
     - uses: actions/upload-artifact@v2
       with:
-        name: CICDPublish
-        run: dotnet publish CICDPracticalRepo.csproj -o ../PublishPro/CICDPracticalRepo/ -r win-x64 --self-contained false /p:DebugType=None
+        name: CICDPublish        
         path: ../PublishPro/CICDPracticalRepo/
 
