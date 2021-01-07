@@ -27,7 +27,7 @@ jobs:
     #- name: Test
     #  run: dotnet test --no-build --verbosity normal
         
-    - name: Upload Application Publish Artifact
+    #- name: Upload Application Publish Artifact
     - uses: actions/upload-artifact@v2
       with:
         name: CICDPublish        
