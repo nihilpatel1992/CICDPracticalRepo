@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     name:  Production Build
-    runs-on: windows-latest
+    runs-on: cicd-hosted
     
     steps:
     - uses: actions/checkout@v2
