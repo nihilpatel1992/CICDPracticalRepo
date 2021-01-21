@@ -68,14 +68,14 @@ jobs:
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
-        task-definition: .aws/task-definition.json
-        container-name: cicdprac
+        task-definition: task-definition.json
+        container-name: ec2-cicd-sandbox
         image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: cicd-app-service
+        service: codebuild-ec2-service-role
         cluster: default
         wait-for-service-stability: true
