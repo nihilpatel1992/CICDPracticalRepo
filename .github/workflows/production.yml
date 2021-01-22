@@ -35,3 +35,22 @@ jobs:
       with:
         name: CICDPublish        
         path: PublishPro/CICDPracticalRepo/
+    
+  deploy:
+    name: Deploy
+    runs-on: cd-runner
+
+    steps:    
+    - name: Download a single artifact
+      uses: actions/download-artifact@v2
+      with:
+         name: CICDPublish
+
+    - name: Deploy to IIS
+      run: |
+        iisreset /stop
+        Copy-Item ./CICDPublish/* C:/inetpub/wwwroot/cicdprac -Recurse -Force
+        iisreset /start
+    
+    - name: Curl the website as a smoke test
+      run: curl http://localhost/cicdprac
