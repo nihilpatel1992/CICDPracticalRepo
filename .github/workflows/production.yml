@@ -45,6 +45,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
          name: CICDPublish
+         path: PublishPro/CICDPracticalRepo/
 
     - name: Deploy to IIS
       run: |
