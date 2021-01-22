@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     name:  Production Build
-    runs-on: windows-latest
+    runs-on: cd-runner
     
     steps:
     - uses: actions/checkout@v2
@@ -35,12 +35,9 @@ jobs:
       with:
         name: CICDPublish        
         path: PublishPro/CICDPracticalRepo/
-    
-  deploy:
-    name: Deploy
-    runs-on: cd-runner
 
-    steps:    
+
+
     - name: Download a single artifact
       uses: actions/download-artifact@v2
       with:
