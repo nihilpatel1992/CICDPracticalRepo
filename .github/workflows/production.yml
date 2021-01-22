@@ -13,7 +13,7 @@ jobs:
     name:  Production Build
     runs-on: windows-latest
     env:
-      IIS_SERVER_COMPUTER_NAME: "ec2-15-206-122-222.ap-south-1.compute.amazonaws.com"
+      IIS_SERVER_COMPUTER_NAME: "ec2-15-206-122-222.ap-south-1.compute.amazonaws.com:8172"
       IIS_WEBSITE_NAME: "cicdprac"
       IIS_SERVER_USERNAME: 'EC2AMAZ-IAFNI1E\WDeployAdmin'
       IIS_SERVER_PASSWORD: "=D5taal4Gtzum9*Rmw9ZIKj=EvDWdl)Q"
