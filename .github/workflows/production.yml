@@ -21,18 +21,18 @@ jobs:
       WEBSITE_CONTENT_PATH: ${{ secrets.WEBSITE_CONTENT_PATH }}
     
     steps:
-   # - uses: actions/checkout@v2
-   # - name: Setup .NET
-   #   uses: actions/setup-dotnet@v1
-   #   with:
-   #     dotnet-version: 3.1.301
-   # - name: Restore dependencies
-   #   run: dotnet restore
-   # - name: Build
-   #   run: dotnet build --configuration Release --no-restore /p:DebugType=None
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.301
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --configuration Release --no-restore /p:DebugType=None
     
-   # - name: Publish
-   #   run: dotnet publish CICDPracticalRepo/CICDPracticalRepo.csproj -o PublishPro/CICDPracticalRepo/ -r win-x64 --self-contained false /p:DebugType=None
+    - name: Publish
+      run: dotnet publish CICDPracticalRepo/CICDPracticalRepo.csproj -o PublishPro/CICDPracticalRepo/ -r win-x64 --self-contained false /p:DebugType=None
   
         
    # - name: Stop Application Pool
