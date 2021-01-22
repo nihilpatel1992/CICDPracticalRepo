@@ -22,7 +22,7 @@ jobs:
     - name: GitHub Actions WebDeploy
       # You may pin to the exact commit or the version.
       # uses: cschleiden/webdeploy-action@48a2cdaf8aaa2bc762c12948ada3db14faead320
-      uses: cschleiden/webdeploy-action@v1
+    - uses: cschleiden/webdeploy-action@v1
       with:
          # Name of an existing website on the IIS machine
          webSiteName: cicdprac 
