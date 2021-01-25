@@ -13,12 +13,12 @@ jobs:
     name:  Production Build
     runs-on: windows-latest
     env:
-      IIS_SERVER_COMPUTER_NAME: "ec2-13-233-89-160.ap-south-1.compute.amazonaws.com:8172"
-      IIS_WEBSITE_NAME: "cicdprac"
-      IIS_SERVER_USERNAME: 'EC2AMAZ-IAFNI1E\Administrator'
-      IIS_SERVER_PASSWORD: "=D5taal4Gtzum9*Rmw9ZIKj=EvDWdl)Q"
-      RECYCLE_APP_NAME: "cicdprac"
-      WEBSITE_CONTENT_PATH: 'C:\inetpub\wwwroot\cicdprac'
+      IIS_SERVER_COMPUTER_NAME: ${{ secrets.IIS_SERVER_COMPUTER_NAME }}
+      IIS_WEBSITE_NAME: ${{ secrets.IIS_WEBSITE_NAME }}
+      IIS_SERVER_USERNAME: ${{ secrets.IIS_SERVER_USERNAME }}
+      IIS_SERVER_PASSWORD: ${{ secrets.IIS_SERVER_PASSWORD }}
+      RECYCLE_APP_NAME: ${{ secrets.RECYCLE_APP_NAME }}
+      WEBSITE_CONTENT_PATH: ${{ secrets.WEBSITE_CONTENT_PATH }}
     
     steps:
     - uses: actions/checkout@v2
