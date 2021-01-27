@@ -79,5 +79,6 @@ jobs:
         version_label: cicd-prod-${{ steps.current-time.outputs.time }}
         region: ap-south-1
         deployment_package: D:/a/CICDPracticalRepo/CICDPracticalRepo/PublishPro/cicdprac.zip
+        use_existing_version_if_available: true
       
 
