@@ -49,7 +49,7 @@ jobs:
       run: cd D:\a\CICDPracticalRepo\CICDPracticalRepo\PublishPro\CICDPracticalRepo\
       
     - name: Generate deployment package
-      run: zip ../cicd.zip -r * .[^.]*'
+      run: zip ../cicd.zip -r * .[^.]*
       
     - name: Deploy to EB
       uses: einaregilsson/beanstalk-deploy@v14
