@@ -64,7 +64,8 @@ jobs:
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: cicdprac-bean
         environment_name: CicdpracBean-env
-        version_label: 12345
+        version_label: cicd-prod-${{ steps.format-time.outputs.replaced }}
         region: ap-south-1
         deployment_package: D:/a/CICDPracticalRepo/CICDPracticalRepo/PublishPro/cicd.zip
+      
 
