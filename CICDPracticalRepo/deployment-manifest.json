@@ -5,7 +5,7 @@
       {
         "name": "test-dotnet-core",
         "parameters": {
-          "appBundle": "cicd.zip",
+          "appBundle": "cicdprac.zip",
           "iisPath": "/",
           "iisWebSite": "Default Web Site"
         }
