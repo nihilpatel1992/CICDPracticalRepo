@@ -57,6 +57,10 @@ jobs:
         # Whether to add subdirectories to simply zip all files to the root
         #recursive: # optional, default is true
       
+    - name: Adding Manifest deployment json file
+      run: cd D:/a/CICDPracticalRepo/CICDPracticalRepo/PublishPro |
+         zip cicdprac.zip cicd.zip ./CICDPracticalRepo/deployment-manifest.json
+      
     - name: Deploy to EB
       uses: einaregilsson/beanstalk-deploy@v14
       with:
@@ -66,6 +70,6 @@ jobs:
         environment_name: CicdpracBean-env
         version_label: cicd-prod-${{ steps.format-time.outputs.replaced }}
         region: ap-south-1
-        deployment_package: D:/a/CICDPracticalRepo/CICDPracticalRepo/PublishPro/cicd.zip
+        deployment_package: D:/a/CICDPracticalRepo/CICDPracticalRepo/PublishPro/cicdprac.zip
       
 
