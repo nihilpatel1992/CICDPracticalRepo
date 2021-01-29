@@ -58,7 +58,7 @@ jobs:
       uses: vimtor/action-zip@v1
       with:
         # Files or directories to zip
-        files: ./PublishPro/cicd.zip ./PublishPro/CICDPracticalRepo/deployment-manifest.json
+        files: ./PublishPro/cicd.zip ./PublishPro/CICDPracticalRepo/aws-windows-deployment-manifest.json
         # Name of output zip file
         dest: ./PublishPro/cicdprac.zip
         # Whether to add subdirectories to simply zip all files to the root
