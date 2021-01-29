@@ -32,7 +32,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore /p:DebugType=None
     
     - name: Publish
-      run: dotnet publish CICDPracticalRepo/CICDPracticalRepo.csproj -o PublishPro/CICDPracticalRepo/ -r win-x64 --no-build --no-restore --self-contained false /p:DebugType=None
+      run: dotnet publish CICDPracticalRepo/CICDPracticalRepo.csproj -f netcoreapp3.1 --no-build --no-restore -o PublishPro/CICDPracticalRepo/ -r win-x64 --self-contained false /p:DebugType=None
   
         
     - name: Stop Application Pool
