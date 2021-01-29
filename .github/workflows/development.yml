@@ -36,7 +36,7 @@ jobs:
       run: dotnet build --configuration Debug --no-restore /p:DebugType=None
     
     - name: Publish
-      run: dotnet publish CICDPracticalRepo/CICDPracticalRepo.csproj -o PublishDev/CICDPracticalRepo/ -r win-x64 --no-restore --self-contained false /p:DebugType=None
+      run: dotnet publish CICDPracticalRepo/CICDPracticalRepo.csproj -o PublishDev/CICDPracticalRepo/ -r win-x64 --no-build --no-restore --self-contained false /p:DebugType=None
     
     #- name: Test
     #  run: dotnet test --no-build --verbosity normal
