@@ -33,15 +33,15 @@ jobs:
     - name: Build
       run: dotnet build --configuration Debug --no-restore /p:DebugType=None
     
-    - name: Publish
-      run: dotnet publish CICDPracticalRepo/CICDPracticalRepo.csproj -c Release -f netcoreapp3.1 --no-build --no-restore -o PublishDev/CICDPracticalRepo/ -r win-x64 --self-contained false /p:DebugType=None
-    
+    #- name: Publish
+    #  run: dotnet publish CICDPracticalRepo/CICDPracticalRepo.csproj -c Release -f netcoreapp3.1 --no-build --no-restore -o PublishDev/CICDPracticalRepo/ -r win-x64 --self-contained false /p:DebugType=None
+  
     #- name: Test
     #  run: dotnet test --no-build --verbosity normal
         
     #- name: Upload Application Publish Artifact
-    - uses: actions/upload-artifact@v2
-      with:
-        name: DevCICDPublish        
-        path: PublishDev/CICDPracticalRepo/
+    #- uses: actions/upload-artifact@v2
+    #  with:
+    #    name: DevCICDPublish        
+    #    path: PublishDev/CICDPracticalRepo/
 
