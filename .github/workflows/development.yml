@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name:  Development Build
-    runs-on: cicd-hosted
+    runs-on: windows-latest
     
     steps:
     - uses: actions/checkout@v2
