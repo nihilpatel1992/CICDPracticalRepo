@@ -24,7 +24,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore -r win-x64 /p:DebugType=None
+      run: dotnet build --configuration Release --no-restore /p:DebugType=None
     
     - name: Publish
       run: dotnet publish CICDPracticalRepo/CICDPracticalRepo.csproj -c Release --no-build --no-restore -o PublishPro/CICDPracticalRepo/ -r win-x64 --self-contained false /p:DebugType=None
