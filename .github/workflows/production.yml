@@ -28,7 +28,6 @@ jobs:
     
     - name: Publish
       run: dotnet publish CICDPracticalRepo/CICDPracticalRepo.csproj -c Release -f netcoreapp3.1 --no-build --no-restore -o PublishPro/CICDPracticalRepo/ -r win-x64 --self-contained true /p:DebugType=None
-  
         
     - name: Stop Application Pool
       shell: cmd
@@ -82,4 +81,11 @@ jobs:
         deployment_package: D:/a/CICDPracticalRepo/CICDPracticalRepo/PublishPro/cicdprac.zip
         use_existing_version_if_available: true
       
-
+    - name: MSTeams Notification
+      uses: skitionek/notify-microsoft-teams@master
+      if: always()
+      with:
+          webhook_url: ${{ secrets.MSTEAMS_WEBHOOK }}
+          needs: ${{ toJson(needs) }}
+          job: ${{ toJson(job) }}
+          steps: ${{ toJson(steps) }}
