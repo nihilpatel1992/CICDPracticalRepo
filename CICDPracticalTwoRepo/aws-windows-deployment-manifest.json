@@ -3,7 +3,7 @@
   "deployments": {
     "aspNetCoreWeb": [
       {
-        "name": "CICDPracticalRepo",
+        "name": "CICDPracticalTwoRepo",
         "parameters": {
           "appBundle": "cicd.zip",
           "iisPath": "/",
