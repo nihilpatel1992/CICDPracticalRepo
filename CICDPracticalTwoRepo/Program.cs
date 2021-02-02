@@ -8,13 +8,21 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System.IO;
 
-namespace CICDPracticalRepo
+
+namespace CICDPracticalTwoRepo
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = new WebHostBuilder()
+           .UseKestrel()
+           .UseContentRoot(Directory.GetCurrentDirectory())
+           .UseIISIntegration()
+           .UseStartup<Startup>()
+           .Build();
+
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
